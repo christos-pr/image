@@ -303,7 +303,7 @@ export default class ImageTool {
     this._data.file = file || {};
 
     if (file && file.url) {
-      this.ui.fillImage(file.url);
+      this.ui.fillImage((file.sizes && file.sizes.large && file.sizes.large.url) || file.url);
     }
   }
 
