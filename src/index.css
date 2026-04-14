@@ -7,6 +7,7 @@
     border-radius: 3px;
     overflow: hidden;
     margin-bottom: 8px;
+    position: relative;
 
     &-picture {
       width: 100%;
@@ -128,14 +129,21 @@
 
   .cdx-button--replace-button {
     display: none;
-    margin-top: 8px;
-    padding: 10px 14px;
-    border-style: solid;
-    background-color: rgba(56, 138, 229, 0.08);
+    position: absolute;
+    left: 50%;
+    bottom: 8px;
+    transform: translateX(-50%);
+    margin-top: 0;
+    width: fit-content;
+    padding: 6px 10px;
+    font-size: 13px;
+    border: 1px solid #9fc2eb;
+    background-color: #eef5fc;
     color: #388ae5;
+    z-index: 2;
 
     &:hover {
-      background-color: rgba(56, 138, 229, 0.14);
+      background-color: #E0E9F5;
     }
   }
 
@@ -145,7 +153,7 @@
     }
 
     .cdx-button--replace-button {
-      display: flex;
+      display: inline-flex;
     }
 
     ^&__image {

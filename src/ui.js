@@ -43,12 +43,12 @@ export default class Ui {
      */
     this.nodes.caption.dataset.placeholder = this.config.captionPlaceholder;
     this.nodes.imageContainer.appendChild(this.nodes.imagePreloader);
+    if (this.nodes.replaceButton) {
+      this.nodes.imageContainer.appendChild(this.nodes.replaceButton);
+    }
     this.nodes.wrapper.appendChild(this.nodes.imageContainer);
     this.nodes.wrapper.appendChild(this.nodes.caption);
     this.nodes.wrapper.appendChild(this.nodes.fileButton);
-    if (this.nodes.replaceButton) {
-      this.nodes.wrapper.appendChild(this.nodes.replaceButton);
-    }
   }
 
   /**
