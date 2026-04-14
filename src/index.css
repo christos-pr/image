@@ -126,9 +126,26 @@
     }
   }
 
+  .cdx-button--replace-button {
+    display: none;
+    margin-top: 8px;
+    padding: 10px 14px;
+    border-style: solid;
+    background-color: rgba(56, 138, 229, 0.08);
+    color: #388ae5;
+
+    &:hover {
+      background-color: rgba(56, 138, 229, 0.14);
+    }
+  }
+
   &--filled {
     .cdx-button {
       display: none;
+    }
+
+    .cdx-button--replace-button {
+      display: flex;
     }
 
     ^&__image {
