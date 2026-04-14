@@ -24,6 +24,7 @@ export default class Ui {
       imageContainer: make('div', [ this.CSS.imageContainer ]),
       fileButton: this.createFileButton(),
       replaceButton: !this.readOnly ? this.createReplaceButton() : undefined,
+      imageFrame: undefined,
       imageEl: undefined,
       imagePreloader: make('div', this.CSS.imagePreloader),
       caption: make('div', [this.CSS.input, this.CSS.caption], {
@@ -43,9 +44,6 @@ export default class Ui {
      */
     this.nodes.caption.dataset.placeholder = this.config.captionPlaceholder;
     this.nodes.imageContainer.appendChild(this.nodes.imagePreloader);
-    if (this.nodes.replaceButton) {
-      this.nodes.imageContainer.appendChild(this.nodes.replaceButton);
-    }
     if (!this.readOnly) {
       this.nodes.imageContainer.addEventListener('click', () => {
         if (this.nodes.imageEl) {
@@ -75,6 +73,7 @@ export default class Ui {
        */
       wrapper: 'image-tool',
       imageContainer: 'image-tool__image',
+      imageFrame: 'image-tool__image-frame',
       imagePreloader: 'image-tool__image-preloader',
       imageEl: 'image-tool__image-picture',
       caption: 'image-tool__caption',
@@ -179,6 +178,9 @@ export default class Ui {
     if (this.nodes.imageEl && this.nodes.imageEl.parentNode) {
       this.nodes.imageEl.parentNode.removeChild(this.nodes.imageEl);
     }
+    if (this.nodes.imageFrame && this.nodes.imageFrame.parentNode) {
+      this.nodes.imageFrame.parentNode.removeChild(this.nodes.imageFrame);
+    }
 
     /**
      * Check for a source extension to compose element correctly: video tag for mp4, img — for others
@@ -241,7 +243,14 @@ export default class Ui {
       }
     });
 
-    this.nodes.imageContainer.appendChild(this.nodes.imageEl);
+    this.nodes.imageFrame = make('div', this.CSS.imageFrame);
+    this.nodes.imageFrame.appendChild(this.nodes.imageEl);
+
+    if (this.nodes.replaceButton) {
+      this.nodes.imageFrame.appendChild(this.nodes.replaceButton);
+    }
+
+    this.nodes.imageContainer.appendChild(this.nodes.imageFrame);
   }
 
   /**

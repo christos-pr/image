@@ -9,6 +9,12 @@
     margin-bottom: 8px;
     position: relative;
 
+    &-frame {
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+    }
+
     &-picture {
       width: 100%;
       max-width: 100%;
