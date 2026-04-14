@@ -46,6 +46,13 @@ export default class Ui {
     if (this.nodes.replaceButton) {
       this.nodes.imageContainer.appendChild(this.nodes.replaceButton);
     }
+    if (!this.readOnly) {
+      this.nodes.imageContainer.addEventListener('click', () => {
+        if (this.nodes.imageEl) {
+          this.onSelectFile();
+        }
+      });
+    }
     this.nodes.wrapper.appendChild(this.nodes.imageContainer);
     this.nodes.wrapper.appendChild(this.nodes.caption);
     this.nodes.wrapper.appendChild(this.nodes.fileButton);
