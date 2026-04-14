@@ -2,6 +2,10 @@
   --bg-color: #ebf0f5;
   --front-color: #388ae5;
   --border-color: #d3dce6;
+  --replace-button-color: #388ae5;
+  --replace-button-background-color: #ebf0f7;
+  --replace-button-border-color: #c0d5ed;
+  --replace-button-hover-background-color: #E0E9F5;
 
   &__image {
     border-radius: 3px;
@@ -142,15 +146,15 @@
     transform: translateX(-50%);
     margin-top: 0;
     width: fit-content;
-    padding: 6px 10px;
-    font-size: 13px;
-    border: 1px solid #9fc2eb;
-    background-color: #eef5fc;
-    color: #388ae5;
+    padding: 10px 14px;
+    font-size: 14px;
+    border: 1px solid var(--replace-button-border-color);
+    background-color: var(--replace-button-background-color);
+    color: var(--replace-button-color);
     z-index: 2;
 
     &:hover {
-      background-color: #E0E9F5;
+      background-color: var(--replace-button-hover-background-color);
     }
   }
 
