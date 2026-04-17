@@ -24,7 +24,7 @@ export default class Uploader {
    * @param {Function} onPreview - callback fired when preview is ready
    */
   uploadSelectedFile({ onPreview }) {
-    upload = this.config.selectFiles()
+    const upload = this.config.selectFiles()
       .then(() => {
         onPreview('');
 

@@ -4,7 +4,7 @@
  * @param  {string} tagName           - new Element tag name
  * @param  {Array|string} classNames  - list or name of CSS class
  * @param  {object} attributes        - any attributes
- * @returns {Element}
+ * @returns {object}
  */
 export function make(tagName, classNames = null, attributes = {}) {
   const el = document.createElement(tagName);

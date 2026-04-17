@@ -100,7 +100,7 @@ export default class Ui {
    * Renders tool UI
    *
    * @param {ImageToolData} toolData - saved tool data
-   * @returns {Element}
+   * @returns {object}
    */
   render(toolData) {
     if (!toolData.file || Object.keys(toolData.file).length === 0) {
@@ -115,7 +115,7 @@ export default class Ui {
   /**
    * Creates upload-file button
    *
-   * @returns {Element}
+   * @returns {object}
    */
   createFileButton() {
     const button = make('div', [ this.CSS.button ]);
@@ -132,7 +132,7 @@ export default class Ui {
   /**
    * Creates replace-image button
    *
-   * @returns {Element}
+   * @returns {object}
    */
   createReplaceButton() {
     const button = make('div', [this.CSS.button, 'cdx-button--replace-button']);
@@ -225,7 +225,7 @@ export default class Ui {
     /**
      * Compose tag with defined attributes
      *
-     * @type {Element}
+     * @type {object}
      */
     this.nodes.imageEl = make(tag, this.CSS.imageEl, attributes);
 
