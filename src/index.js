@@ -184,7 +184,7 @@ export default class ImageTool {
    *
    * @public
    *
-   * @returns {HTMLDivElement}
+   * @returns {object}
    */
   render() {
     return this.ui.render(this.data);

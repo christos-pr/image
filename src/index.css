@@ -2,17 +2,29 @@
   --bg-color: #ebf0f5;
   --front-color: #388ae5;
   --border-color: #d3dce6;
+  --replace-button-color: #388ae5;
+  --replace-button-background-color: #ebf0f7;
+  --replace-button-border-color: #c0d5ed;
+  --replace-button-hover-background-color: #E0E9F5;
 
   &__image {
     border-radius: 3px;
     overflow: hidden;
     margin-bottom: 8px;
+    position: relative;
+
+    &-frame {
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+    }
 
     &-picture {
       width: 100%;
       max-width: 100%;
       vertical-align: bottom;
       display: block;
+      cursor: pointer;
     }
 
     &-preloader {
@@ -126,9 +138,33 @@
     }
   }
 
+  .cdx-button--replace-button {
+    display: none;
+    position: absolute;
+    left: 50%;
+    bottom: 8px;
+    transform: translateX(-50%);
+    margin-top: 0;
+    width: fit-content;
+    padding: 10px 14px;
+    font-size: 14px;
+    border: 1px solid var(--replace-button-border-color);
+    background-color: var(--replace-button-background-color);
+    color: var(--replace-button-color);
+    z-index: 2;
+
+    &:hover {
+      background-color: var(--replace-button-hover-background-color);
+    }
+  }
+
   &--filled {
     .cdx-button {
       display: none;
+    }
+
+    .cdx-button--replace-button {
+      display: inline-flex;
     }
 
     ^&__image {
