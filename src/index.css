@@ -151,7 +151,7 @@
     border: 1px solid var(--replace-button-border-color);
     background-color: var(--replace-button-background-color);
     color: var(--replace-button-color);
-    z-index: 2;
+    z-index: 1;
 
     &:hover {
       background-color: var(--replace-button-hover-background-color);
